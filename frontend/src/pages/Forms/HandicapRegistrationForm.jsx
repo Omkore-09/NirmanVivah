@@ -46,7 +46,7 @@ export default function HandicapRegistrationForm() {
     console.log("Form Data Before Submission:", formData); // Debugging
 
     try {
-        const response = await fetch('http://localhost:5000/api/handicap/hregister', {
+        const response = await fetch('https://nirmanvivah-backend.onrender.com/api/handicap/hregister', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(formData)
