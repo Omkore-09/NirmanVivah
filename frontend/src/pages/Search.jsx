@@ -58,7 +58,7 @@ const SearchMarriageProfiles = () => {
   const handleSearch = async () => {
     setLoading(true);
     try {
-      const response = await axios.get("http://localhost:5000/api/search", {
+      const response = await axios.get("https://nirmanvivah-backend.onrender.com/api/search", {
         params: {
           state: selectedState,
           district: selectedDistrict,
