@@ -12,9 +12,11 @@ export default function UpdateRegistration() {
 
   const handleSubmit = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/api/check-registration/${mobileNumber}`);
+      const formattedNumber = `+91${mobileNumber}`; // Ensure +91 prefix
+  
+      const response = await fetch(`https://nirmanvivah-backend.onrender.com/api/check-registration/${formattedNumber}`);
       const data = await response.json();
-
+  
       if (data.type === "normal" || data.type === "handicap") {
         setUserType(data.type);
         setUserData(data.user);
@@ -27,6 +29,7 @@ export default function UpdateRegistration() {
       console.error("Error fetching user details:", error);
     }
   };
+  
 
   const handleEdit = () => setIsEditing(true);
   const handleSave = () => setIsEditing(false);
